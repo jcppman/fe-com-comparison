@@ -27,3 +27,6 @@ For many reasons I need to modify the encoding libs used in this demo to fit the
 needs, for example [mpe-lame-encoder](https://github.com/higuma/mp3-lame-encoder-js) does not
 support Web Assembly yet. The included codes are modified but all algorithm
 implementations are crafted by the original projects.
+
+The Water Ripples component is from [React-motion](https://github.com/chenglou/react-motion)'s
+[Demo-7](https://github.com/chenglou/react-motion/tree/master/demos/demo7-water-ripples)
