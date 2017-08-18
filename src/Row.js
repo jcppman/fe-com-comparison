@@ -42,10 +42,12 @@ class Row extends React.Component {
                 `encode-start-${name}-${executed}`,
                 `encode-end-${name}-${executed}`,
             );
+            const entry = performance.getEntriesByName(`encode-${name}-${executed}`)[0];
             this.setState((prevState) => ({
                 status: 'done',
                 executed: prevState.executed + 1,
                 href: URL.createObjectURL(blob),
+                cost: entry.duration.toFixed(2),
             }));
         });
     }
@@ -57,6 +59,7 @@ class Row extends React.Component {
         const {
             status,
             href,
+            cost,
         } = this.state;
 
         return (
@@ -77,6 +80,11 @@ class Row extends React.Component {
                         </a>
                     )}
                 </td>
+                {cost && (
+                    <td>
+                        {cost} ms
+                    </td>
+                )}
             </tr>
         );
     }

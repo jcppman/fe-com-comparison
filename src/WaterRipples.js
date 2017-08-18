@@ -57,6 +57,7 @@ export default class Demo extends React.Component {
                 height: '500px',
                 backgroundColor: '#1B1B1B',
                 position: 'relative',
+                oveflow: 'hidden',
             }}
           >
             {circles.map(({key, style: {opacity, scale, x, y}}) =>

@@ -75,6 +75,7 @@ class Main extends React.Component {
                             <th>Method</th>
                             <th></th>
                             <th></th>
+                            <th>Cost</th>
                         </tr>
                     </thead>
                     <tbody>
