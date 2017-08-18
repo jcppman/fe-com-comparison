@@ -58899,10 +58899,12 @@ class Row extends react.Component {
         }).then(blob => {
             performance.mark(`encode-end-${name}-${executed}`);
             performance.measure(`encode-${name}-${executed}`, `encode-start-${name}-${executed}`, `encode-end-${name}-${executed}`);
+            const entry = performance.getEntriesByName(`encode-${name}-${executed}`)[0];
             this.setState(prevState => ({
                 status: 'done',
                 executed: prevState.executed + 1,
-                href: URL.createObjectURL(blob)
+                href: URL.createObjectURL(blob),
+                cost: entry.duration.toFixed(2)
             }));
         });
     }
@@ -58913,7 +58915,8 @@ class Row extends react.Component {
         } = this.props;
         const {
             status,
-            href
+            href,
+            cost
         } = this.state;
 
         return react.createElement(
@@ -58946,6 +58949,12 @@ class Row extends react.Component {
                     },
                     'Download'
                 )
+            ),
+            cost && react.createElement(
+                'td',
+                null,
+                cost,
+                ' ms'
             )
         );
     }
@@ -61417,7 +61426,8 @@ class Demo extends react.Component {
             width: '500px',
             height: '500px',
             backgroundColor: '#1B1B1B',
-            position: 'relative'
+            position: 'relative',
+            oveflow: 'hidden'
           }
         },
         circles.map(({ key, style: { opacity, scale, x, y } }) => react.createElement('div', {
@@ -61547,7 +61557,12 @@ class Main extends react.Component {
                             'Method'
                         ),
                         react.createElement('th', null),
-                        react.createElement('th', null)
+                        react.createElement('th', null),
+                        react.createElement(
+                            'th',
+                            null,
+                            'Cost'
+                        )
                     )
                 ),
                 react.createElement(
