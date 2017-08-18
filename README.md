@@ -11,6 +11,15 @@ handle cpu intense tasks on webpages, they are:
 - Web Assembly (modified [mp3-lame-encoder](https://github.com/higuma/mp3-lame-encoder-js))
 - Web Assembly + Web Worker
 
+USAGE
+=====
+
+Serve the files in `public` folder as static files, for example:
+
+- `npm install http-server -g`
+- `http-server public`
+- open http://localhost:8080
+
 Credits
 =======
 
