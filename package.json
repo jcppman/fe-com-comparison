@@ -1,0 +1,29 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "env ROLLUP_TARGET=main rollup -c && env ROLLUP_TARGET=workers/pureJs rollup -c && env ROLLUP_TARGET=workers/asmJs rollup -c && env ROLLUP_TARGET=workers/wasm rollup -c"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-plugin-transform-inline-environment-variables": "^0.2.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.6.0",
+    "benchmark": "^2.1.4",
+    "react": "^0.14.8",
+    "react-dom": "^0.14.8",
+    "react-motion": "^0.5.0",
+    "rollup": "^0.47.4",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.1.0",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "dependencies": {
+    "lamejs": "^1.2.0"
+  }
+}
