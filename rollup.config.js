@@ -9,8 +9,8 @@ if (!target) {
 }
 
 export default {
-	format: 'iife', // immediately-invoked function expression — suitable for <script> tags
-	plugins: [
+    format: 'iife', // immediately-invoked function expression — suitable for <script> tags
+    plugins: [
         babel({
             exclude: [
                 'node_modules/*',
@@ -21,10 +21,10 @@ export default {
                 'babel-plugin-transform-inline-environment-variables',
             ],
         }),
-		resolve(), // tells Rollup how to find date-fns in node_modules
-		commonjs(), // converts date-fns to ES modules
-	],
-	sourceMap: true,
+        resolve(), // tells Rollup how to find date-fns in node_modules
+        commonjs(), // converts date-fns to ES modules
+    ],
+    sourceMap: true,
     entry: `src/${target}.js`,
     dest: `public/${target}.js`,
 };
