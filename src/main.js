@@ -9,8 +9,7 @@ import wasm from './benchmark/wasm';
 import wasmWorker from './benchmark/wasmWorker';
 
 import Row from './Row';
-import WR from './WaterRipples';
-
+import WR from './WaterRipples'; 
 import { shortWav, longWav } from './Resource'; 
 
 const methods = [
